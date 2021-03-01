@@ -22,6 +22,7 @@ public class Message {
     private Map<String, Object> data;
     private List<String> registration_ids;
     private Notification notification;
+    private FCMOptions fcm_options;
 
     private Message(MessageBuilder builder) {
         this.to = builder.to;
@@ -35,6 +36,7 @@ public class Message {
         this.notification = builder.notification;
         this.condition = builder.condition;
         this.registration_ids = builder.registration_ids;
+        this.fcm_options = builder.fcm_options;
     }
 
 
@@ -60,6 +62,7 @@ public class Message {
         private Map<String, Object> data = new HashMap<>(2);
         private List<String> registration_ids = new ArrayList<>(2);
         private Notification notification;
+        private FCMOptions fcm_options;
 
         /**
          * Send message to single topic
@@ -148,6 +151,11 @@ public class Message {
 
         public MessageBuilder notification(Notification notification) {
             this.notification = notification;
+            return this;
+        }
+
+        public MessageBuilder fcmOptions(FCMOptions fcmOptions) {
+            this.fcm_options = fcmOptions;
             return this;
         }
 
