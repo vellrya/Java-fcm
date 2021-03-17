@@ -72,7 +72,7 @@ public class Message {
          * @return the message
          */
         public MessageBuilder toTopic(String topic) {
-            this.to = topic;
+            this.to = "/topics/"+topic;
             return this;
         }
 
