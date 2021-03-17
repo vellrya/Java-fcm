@@ -78,7 +78,7 @@ public class Sender {
     private class EmptyCallback implements Callback {
         @Override
         public void onResponse(Call call, Response response) {
-            System.out.println(response.body());
+            //System.out.println(response.body());
         }
 
         @Override
