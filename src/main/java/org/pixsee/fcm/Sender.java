@@ -78,7 +78,8 @@ public class Sender {
     private class EmptyCallback implements Callback {
         @Override
         public void onResponse(Call call, Response response) {
-            //System.out.println(response.body());
+            if (!response.body().toString().contains("message_id"))
+                System.out.println(response.body());
         }
 
         @Override
